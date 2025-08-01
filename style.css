@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
+  /* border: .1rem solid red; */
 }
 
 :root {
@@ -39,6 +40,7 @@ li {
 .flex {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .between {
@@ -52,6 +54,12 @@ li {
   gap: 3rem;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
 /* ---------------------------------------- Header Styling ---------------------------------------------- */
 .navbar {
   min-height: 12vh;
@@ -65,13 +73,13 @@ li {
 
 .btn {
   display: inline-block;
-  padding: .9rem 2rem;
+  padding: 0.9rem 2rem;
   background: var(--gold-finger);
   border-radius: 1rem;
   font-size: 1.1rem;
   color: var(--pure-white);
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 1px;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .btn:hover {
@@ -87,7 +95,7 @@ li {
   position: absolute;
   top: 50%;
   right: -10px;
-  font-size: .85rem;
+  font-size: 0.85rem;
   width: 20px;
   line-height: 20px;
   aspect-ratio: 1;
@@ -105,18 +113,80 @@ li {
 .mobile-menu {
   display: none;
 }
-/* Section Styling */
+/* ------------------------------------------------- Section Styling ------------------------------------------------- */
+
+/* ------------------------------------------------- hero Section --------------------------------------------------- */
+.hero-section {
+  min-height: calc(100vh - 12vh);
+}
+
+.content,
+.image-container {
+  flex: 1;
+  flex-basis: 300px;
+}
+
+h1 {
+  font-size: 5.6vw;
+  color: var(--lead);
+  span {
+    color: var(--gold-finger);
+  }
+}
+
+p {
+  font-size: 1.25rem;
+  color: gray;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+.para {
+  margin-block: 2rem;
+  max-width: 550px;
+}
+
+.social-icons {
+  background: var(--hint-yellow);
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 1px;
+  transition: .3s ease-in-out;
+}
+
+.social-icons:hover {
+    background: var(--lead);
+    color: var(--pure-white);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Footer Styling */
 
-
-
-
-
 /* ------------------------------------------ Media Queries ----------------------------------------- */
 
-@media screen and (max-width: 780px) {
 
+/* ------------------------------ For Header ------------------------ */
+
+@media screen and (max-width: 780px) {
   .navlist,
   .nav-action .btn {
     display: none;
@@ -139,13 +209,30 @@ li {
     width: 20rem;
     padding: 2rem;
     background: var(--pure-white);
-    border: .1rem solid var(--gold-finger);
+    border: 0.1rem solid var(--gold-finger);
     border-radius: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.05) 8px 8px 8px, rgba(0, 0, 0, 0.05) 8px 8px 8px inset;
-    transition: all .5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.05) 8px 8px 8px,
+      rgba(0, 0, 0, 0.05) 8px 8px 8px inset;
+    transition: all 0.5s ease-in-out;
   }
   .mobile-menu-active {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+
+/* ---------------------------------- For Section --------------------------------- */
+/* ---------------------------------- For Hero --------------------------------- */
+
+h1 {
+  font-size: 3.6rem;
+}
+.content {
+  padding-top: 3rem;
+}
+.gap-2 {
+  gap: 1.4rem;
+}
+.gap-4 {
+  gap: 4rem;
 }
